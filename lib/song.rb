@@ -24,7 +24,7 @@ class Song
   
   def self.new_by_filename(filename)
     song = Song.new(filename.split(" - ")[1])
-    artist = Artist.new(filename.split(" - ")[0])
+    artist = Artist.new(filename.split(" - ")[0].chomp('.mp3'))
     song.artist = artist unless song.artist = artist
     artist.songs << song
     song
